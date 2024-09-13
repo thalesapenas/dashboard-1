@@ -46,5 +46,3 @@ def sing_in (user_login :user_schema.userLogin, db: Session = Depends(get_db)):
 @router.get("/me", status_code=status.HTTP_200_OK,response_model=user_schema.UserView)
 def me (user: user_schema.userLogin = Depends(get_logged_user)):
     return user
-
-#criar endpoint para prescrição

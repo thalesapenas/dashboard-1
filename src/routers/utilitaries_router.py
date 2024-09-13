@@ -24,4 +24,3 @@ def get_logged_user(token: str = Depends(oauth2_schema), db: Session = Depends(g
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not found")
     
     return user
-    

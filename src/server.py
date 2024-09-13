@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware import Middleware
-from src.routers import user_router
+from src.routers import user_router,prescription_router
 from src.infra.sqlalchemy.config.database import create_database
 
 middleware = [
@@ -19,5 +19,5 @@ create_database()
 
 #USER - segurança e autenticação
 app.include_router(user_router.router)
-
+app.include_router(prescription_router.router)
 
